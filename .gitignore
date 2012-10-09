@@ -7,3 +7,6 @@ lib*.so.*
 *.dll
 /debug
 /release
+/doc/Doxyfile
+/doc/output
+/chroma_key.frag
