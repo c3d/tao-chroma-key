@@ -1,0 +1,9 @@
+Makefile
+Makefile.Debug
+Makefile.Release
+lib*.dylib
+lib*.so
+lib*.so.*
+*.dll
+/debug
+/release
