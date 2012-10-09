@@ -1,0 +1,61 @@
+// ChromaKey module definition
+//
+// Make some pixels of a texture transparent based on color hues 
+//
+// Copyright 2012 Taodyne SAS
+
+module_description
+    id "5929DD32-C197-468B-8C8C-28060BCEC39B" 
+    name "Chroma Key Compositing"
+    description "Make some pixels of a texture transparent based on color hues. " &
+                "This module uses code from libavg (http://www.libavg.de) " &
+                "and is covered by the GNU General Public License. "
+                "See the COPYING file in the module folder."
+    import_name "ChromaKey"
+    author "Taodyne SAS"
+    website "http://gitorious.org/tao-presentation-modules/chroma_key"
+    version 1.0
+
+
+module_description "fr",
+    name "Effet d'incrustation (chroma key)"
+    description "Rend certains pixels d'une texture transparents en fonction de leur couleur. " &
+                "Ce module utilise du code extrait de libavg (http://www.libavg.de) " &
+                " et est couvert par la licence " &
+                "GNU General Public License; voir le fichier COPYING dans " &
+                "le répertoire du module."
+
+chroma_key H:real, S:real, L:real, HTolerance:real, STolerance:real, LTolerance:real, Softness:real, SpillThreshold:real ->
+
+    H_ := H
+    S_ := S
+    L_ := L
+
+    HTolerance_ := HTolerance
+    STolerance_ := STolerance
+    LTolerance_ := LTolerance
+
+    Softness_       := Softness
+    SpillThreshold_ := SpillThreshold
+
+    chroma_key_shader
+
+    shader_set u_HKey := H_
+    shader_set u_SKey := S_
+    shader_set u_LKey := L_
+
+    shader_set u_HTolerance := HTolerance_ * 360.0
+    shader_set u_STolerance := STolerance_
+    shader_set u_LTolerance := LTolerance_
+
+    shader_set u_HSoftTolerance := (HTolerance_ + Softness_) * 360.0
+    shader_set u_SSoftTolerance := (STolerance_ + Softness_)
+    shader_set u_LSoftTolerance := (LTolerance_ + Softness_)
+
+    shader_set u_SpillThreshold := SpillThreshold_ * 360.0
+
+    shader_set u_bIsLast := 1
+
+chroma_key_shader ->
+    shader_program
+        fragment_shader_file module_dir & "/chroma_key.frag"
