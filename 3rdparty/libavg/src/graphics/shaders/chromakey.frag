@@ -121,9 +121,9 @@ void main(void)
         tex.rgb = hsl2rgb(h, s, l);
     }
     if (u_bIsLast) {
-       gl_FragColor = vec4(tex.rgb*alpha, tex.a * alpha);
+       gl_FragColor = vec4(tex.rgb*alpha, tex.a * alpha) * gl_Color;
     } else {
-       gl_FragColor = vec4(tex.rgb, tex.a * alpha);
+       gl_FragColor = vec4(tex.rgb, tex.a * alpha) * gl_Color;
     }
 }
 
