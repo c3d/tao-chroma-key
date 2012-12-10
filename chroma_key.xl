@@ -14,7 +14,7 @@ module_description
     import_name "ChromaKey"
     author "Taodyne SAS"
     website "http://gitorious.org/tao-presentation-modules/chroma_key"
-    version 1.0
+    version 1.001
 
 
 module_description "fr",
