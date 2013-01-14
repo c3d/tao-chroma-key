@@ -2,6 +2,7 @@
  * @~english
  * @taomoduledescription{ChromaKey, Chroma Key Compositing}
  *
+ * <tt>import ChromaKey</tt> - Chroma Key effect.
  * The chroma key effect is typically used to remove the background of a
  * picture or a video. It works by making transparent all the pixels that
  * are of a given color, or similar to that color. Here is an example.
@@ -9,7 +10,7 @@
  * @~french
  * @taomoduledescription{ChromaKey, Effet d'incrustation (chroma key)}
  *
- * Rend certains pixels d'une texture transparents en fonction de leur couleur 
+ * <tt>import ChromaKey</tt> - Rend certains pixels d'une texture transparents en fonction de leur couleur.
  *
  * Le filtre <em>chroma key</em> permet de réaliser des effets d'incrustation
  * en rendant transparents les pixels qui ont une couleur donnée, ou une
