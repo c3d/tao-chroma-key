@@ -5,6 +5,7 @@ lib*.dylib
 lib*.so
 lib*.so.*
 *.dll
+*.xl.sig
 /debug
 /release
 /doc/Doxyfile
