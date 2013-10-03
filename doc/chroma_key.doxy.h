@@ -16,7 +16,7 @@
  * couleur similaire. Voici un exemple.
 
  * @~
- * @code
+@code
 import ChromaKey
 
 clear_color 0, 0, 0, 1
@@ -28,7 +28,7 @@ rectangle -150, 0, texture_width, texture_height
 
 chroma_key 215, 0.5, 0.5, 0, 0.1, 0.1, 0.31, 10
 rectangle  150, 0, texture_width, texture_height
- * @endcode
+@endcode
  *
  * @~english
  * @image html chromakey_example.jpg "The blue sky is removed"
