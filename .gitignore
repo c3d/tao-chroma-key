@@ -14,3 +14,4 @@ moc_*.cpp
 /*.taokey
 doc/Doxyfile
 doc/output
+chroma_key.frag
